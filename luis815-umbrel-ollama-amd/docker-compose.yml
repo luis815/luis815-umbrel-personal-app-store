@@ -17,6 +17,7 @@ services:
       OLLAMA_VRAM_OVERRIDE: 8589934592
       GPU_MAX_ALLOC_PERCENT: 100
       OLLAMA_FLASH_ATTENTION: 0
+      HSA_ENABLE_SDMA: 0
     group_add:
       - "44"
       - "991"
