@@ -2,7 +2,7 @@ manifestVersion: 1
 id: luis815-umbrel-open-webui-amd
 name: Open WebUI AMD
 tagline: Chat with Ollama models like DeepSeek-R1 and LLama, or use an OpenAI API key
-icon: icon.svg
+icon: https://raw.githubusercontent.com/luis815/luis815-umbrel-personal-app-store/master/luis815-umbrel-open-webui-amd/icon.jpg
 category: ai
 version: "0.8.5"
 port: 2876
@@ -30,9 +30,9 @@ submission: https://github.com/luis815/luis815-umbrel-personal-app-store
 repo: https://github.com/open-webui/open-webui
 support: https://github.com/open-webui/open-webui/issues
 gallery:
-  - 1.webp
-  - 2.webp
-  - 3.webp
+  - https://raw.githubusercontent.com/luis815/luis815-umbrel-personal-app-store/master/luis815-umbrel-open-webui-amd/1.jpg
+  - https://raw.githubusercontent.com/luis815/luis815-umbrel-personal-app-store/master/luis815-umbrel-open-webui-amd/2.jpg
+  - https://raw.githubusercontent.com/luis815/luis815-umbrel-personal-app-store/master/luis815-umbrel-open-webui-amd/3.jpg
 releaseNotes: >-
   Key highlights in this release include:
     - Voice dictation can now be toggled with a keyboard shortcut (Cmd+Shift+L or Ctrl+Shift+L)

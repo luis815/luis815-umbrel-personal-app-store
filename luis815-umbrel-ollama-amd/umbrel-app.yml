@@ -2,7 +2,7 @@ manifestVersion: 1
 id: luis815-umbrel-ollama-amd
 name: Ollama AMD
 tagline: Self-host open source AI models like DeepSeek-R1, Llama, and more
-icon: icon.png
+icon: https://raw.githubusercontent.com/luis815/luis815-umbrel-personal-app-store/master/luis815-umbrel-ollama-amd/icon.jpg
 category: ai
 version: "0.17.4-rocm"
 port: 11434
@@ -30,9 +30,9 @@ submission: https://github.com/luis815/luis815-umbrel-personal-app-store
 repo: https://github.com/ollama/ollama
 support: https://github.com/ollama/ollama/issues
 gallery:
-  - 1.png
-  - 2.png
-  - 3.png
+  - https://raw.githubusercontent.com/luis815/luis815-umbrel-personal-app-store/master/luis815-umbrel-ollama-amd/1.jpg
+  - https://raw.githubusercontent.com/luis815/luis815-umbrel-personal-app-store/master/luis815-umbrel-ollama-amd/2.jpg
+  - https://raw.githubusercontent.com/luis815/luis815-umbrel-personal-app-store/master/luis815-umbrel-ollama-amd/3.jpg
 releaseNotes: >-
   New models
 
