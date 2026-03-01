@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+
+  app_proxy:
+    environment:
+      # The format here is: <app-id>_<docker-service-name>_1
+      APP_HOST: luis815-umbrel_open-webui-amd_1
+      APP_PORT: 8080
+      PROXY_AUTH_ADD: 'false'
+  luis815-umbrel-open-webui-amd:
+    image: hcr.io/open-webui/open-webui:v0.8.5
+    volumes:
+      - ${APP_DATA_DIR}/data/open-webui:/app/backend/data
+    environment:
+      OLLAMA_BASE_URL: $APP_OLLAMA_AMD_URL
+    restart: on-failure
