@@ -11,8 +11,8 @@ services:
   luis815-umbrel-ollama-amd:
     image: ollama/ollama:0.17.4-rocm
     environment:
-      - OLLAMA_ORIGINS: '*'
-      - OLLAMA_CONTEXT_LENGTH: 8192
+      OLLAMA_ORIGINS: '*'
+      OLLAMA_CONTEXT_LENGTH: 8192
     volumes:
       - ${APP_DATA_DIR}/data:/root/.ollama
     devices:
