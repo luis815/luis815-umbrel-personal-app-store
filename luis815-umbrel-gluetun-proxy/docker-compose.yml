@@ -35,23 +35,8 @@ services:
   status-page:
     image: nginx:1.29.8-alpine
     network_mode: "service:vpn"
-    command: >
-      /bin/sh -c "
-      while true; do
-        CURRENT_IP=$$(wget -qO- http://ifconfig.me || echo 'DISCONNECTED');
-        if [ \"$$CURRENT_IP\" != 'DISCONNECTED' ]; then
-          V_STAT=\"ONLINE ($$CURRENT_IP)\";
-        else
-          V_STAT='OFFLINE';
-        fi;
-        if timeout 1 bash -c "echo > /dev/tcp/127.0.0.1/8888" 2>/dev/null; then
-          P_STAT='ONLINE';
-        else
-          P_STAT='OFFLINE';
-        fi;
-        echo \"<html><body style='background:#121212;color:#00ff00;display:flex;justify-content:center;align-items:center;height:100vh;font-family:monospace;'><h1>VPN: $$V_STAT | PROXY: $$P_STAT</h1></body></html>\" > /usr/share/nginx/html/index.html;
-        sleep 300;
-      done & nginx -g 'daemon off;'"
+    command: |
+      /bin/sh -c "echo '<html><body style=\"background:#121212;color:#00ff00;display:flex;justify-content:center;align-items:center;height:100vh;font-family:monospace;\"><h1>Server is Online</h1></body></html>' > /usr/share/nginx/html/index.html && nginx -g 'daemon off;'"
     depends_on:
       - vpn
     restart: on-failure
