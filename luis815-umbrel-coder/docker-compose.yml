@@ -19,12 +19,15 @@ services:
     restart: on-failure
     environment:
       DOCKER_ENSURE_BRIDGE: dind0:10.32.0.1/16
+    entrypoint: ["/bin/sh", "-c"]
     command: |
-      dockerd
-        --bridge dind0
-        --data-root /data/data
-        --exec-root /data/exec
-        --host unix:///data/docker.sock
+      mkdir -p /data/data
+      chown 1000:1000 /data/data
+      exec dockerd \
+        --bridge dind0 \
+        --data-root /data/data \
+        --exec-root /data/exec \
+        --host unix:///data/docker.sock \
         --pidfile /data/docker.pid
     volumes:
       - ${APP_DATA_DIR}/data/docker:/data
@@ -45,7 +48,6 @@ services:
         condition: service_healthy
     restart: on-failure
     devices:
-      - /dev/dri
       - /dev/dri
 
   database:
